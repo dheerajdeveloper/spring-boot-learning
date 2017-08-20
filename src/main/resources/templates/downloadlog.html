@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="'Hello, ' + ${downloadLogs} + '!'"/>
+
+
+<table>
+
+    <tr>
+
+        <th> downloadId</th>
+        <th> requestSource</th>
+        <th> status</th>
+        <th> createdOn</th>
+        <th> updatedOn</th>
+        <th> columnRequested</th>
+        <th> requestType</th>
+        <th> requestToNotiReceiveTime</th>
+        <th> notiReceivedToNotiSentTime</th>
+        <th> errorCode</th>
+        <th> request</th>
+    </tr>
+
+    <tr th:each="prod : ${downloadLogs}">
+        <td th:text="${prod.downloadId}"></td>
+        <td th:text="${prod.requestSource}"></td>
+        <td th:text="${prod.status}"></td>
+        <td th:text="${prod.createdOn}"></td>
+        <td th:text="${prod.updatedOn}"></td>
+        <td th:text="${prod.columnRequested}"></td>
+        <td th:text="${prod.requestType}"></td>
+        <td th:text="${prod.requestToNotiReceiveTime}"></td>
+        <td th:text="${prod.notiReceivedToNotiSentTime}"></td>
+        <td th:text="${prod.errorCode}"></td>
+        <td th:text="${prod.request}"></td>
+    </tr>
+
+
+</table>
+
+
+</body>
+
+</html>
